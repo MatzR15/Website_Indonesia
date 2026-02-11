@@ -1,69 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Indonesië</title>
 
     <style>
-        * {
-        margin: 0; 
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    /*hero*/
-    .hero {
-        position: sticky;
-        top: 0;
-        height: 80vh;
-        background: url("https://static.rondreis.nl/rondreis-storage-production/media-3421-conversions-borobudur-xxl-webp/w1800xh1200/eyJidWNrZXQiOiJyb25kcmVpcy1zdG9yYWdlLXByb2R1Y3Rpb24iLCJrZXkiOiJtZWRpYVwvMzQyMVwvY29udmVyc2lvbnNcL2Jvcm9idWR1ci14eGwud2VicCIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxMjAwfX19") center / cover no-repeat;
+      body {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+        background: url("imgs/Indonesia.jpg") no-repeat center center fixed;
+        background-size: 90%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        transition: all 0.6s ease;
-        z-index: 10;
-    }
-    .hero.hidden {
-        opacity: 0;
-        transform: translateY(-100%);
-        pointer-events: none;
-    }
-    .hero h1 {
-        color: white;
-        font-size: 3rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    
-    /*content*/
-    main {
-        padding: 80px 60px;
-    }
+        align-items: center;
+        height: 100vh;
+      }
 
-    .content {
-        max-width: 700px;
-        margin: 0 auto 100px auto;
+      .container {
         text-align: center;
-    }
+      }
 
-    .content h2 {
-        margin-bottom: 20px;
-    }
+      h1 {
+        font-size: 60px;
+        letter-spacing: 5px;
+        margin-bottom: 60px;
+      }
 
-    .content p {
-        line-height: 1.6;
-    }
+      .knoppen a {
+        display: block;
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+        background: white;
+        border: 1px solid #ddd;
+        font-size: 24px;
+        transition: 0.3s;
+      }
+
+      .knoppen a:hover {
+        background: black;
+        color: white;
+      }
     </style>
   </head>
-  <body>
-    <div class="hero" id="hero">
-        <h1>Indonesië</h1>
-    </div>
 
-    <main>
-        <section class="content">
-            <h2>Inleiding</h2>
-            <p>Indonesië is een land dat bestaat uit meer dan 17.000 eilanden, verspreid over een uitgestrekt gebied in Zuidoost-Azië. Het land staat bekend om zijn rijke cultuur, prachtige landschappen en diverse flora en fauna. In deze trip door Indonesië zullen we enkele van de meest iconische bestemmingen verkennen, waaronder Bali, Java, Sumatra en Komodo.</p>
+  <body>
+    <div class="container">
+      <h1>INDONESIË</h1>
+
+      <div class="knoppen">
+        <a href="#">BALI</a>
+        <a href="#">JAVA</a>
+        <a href="#">SUMATRA</a>
+      </div>
+    </div>
+  </body>
 </html>
