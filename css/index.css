@@ -13,12 +13,6 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 60px;
-  letter-spacing: 5px;
-  margin-bottom: 60px;
-}
-
 .knoppen a {
   display: block;
   width: 300px;
