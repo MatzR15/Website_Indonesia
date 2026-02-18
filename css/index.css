@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background: url("../imgs/Indonesia.jpg") no-repeat center center fixed;
+  background-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+}
+
+.knoppen a {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+  background: white;
+  border: 1px solid #ddd;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.knoppen a:hover {
+  background: black;
+  color: white;
+}
