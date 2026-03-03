@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../css/tekst.css">
-    <link rel="stylesheet" href="../css/Eilanden.css">
+    <link rel="stylesheet" href="../css/tekst.css" />
+    <link rel="stylesheet" href="../css/Eilanden.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,13 +14,12 @@
         text-align: center;
         padding: 100px 20px;
         background: white;
-        background-image: url("../imgs/Bali_singleline.jpg"); 
-        background-size: 40%;   
-        background-position: center; 
-        background-repeat: no-repeat; 
-        color: black; 
+        background-image: url("../imgs/Bali_singleline.jpg");
+        background-size: 40%;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: black;
         position: relative;
-        
       }
 
       .hero h1 {
@@ -33,7 +32,7 @@
         font-size: 22px;
         color: black;
       }
-      </style>
+    </style>
   </head>
 
   <body>
@@ -81,5 +80,20 @@
         </p>
       </div>
     </div>
+
+    <script>
+      const sections = document.querySelectorAll(".section");
+
+      window.addEventListener("scroll", function () {
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const screenHeight = window.innerHeight;
+
+          if (sectionTop < screenHeight - 100) {
+            section.classList.add("show");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
