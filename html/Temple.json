@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "naam": "Borobudur", "religie": "Buddhist" },
+      "geometry": { "type": "Point", "coordinates": [110.2038, -7.6079] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Prambanan", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [110.4910, -7.7525] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Mendut", "religie": "Buddhist" },
+      "geometry": { "type": "Point", "coordinates": [110.2030, -7.6071] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Sewu", "religie": "Buddhist" },
+      "geometry": { "type": "Point", "coordinates": [110.4803, -7.7416] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Plaosan", "religie": "Buddhist" },
+      "geometry": { "type": "Point", "coordinates": [110.4501, -7.7358] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Sukuh", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [111.1234, -7.7190] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Cetho", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [111.1705, -7.5189] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Penataran", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [112.5470, -8.2101] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Ijo", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [110.5211, -7.7469] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "naam": "Candi Sukuh (extra)", "religie": "Hindu" },
+      "geometry": { "type": "Point", "coordinates": [111.1225, -7.7185] }
+    }
+  ]
+}
