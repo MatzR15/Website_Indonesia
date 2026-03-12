@@ -27,6 +27,12 @@ nav a {
   padding: 0 20px;
 }
 
+.gif-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
 .section {
   background: white;
   padding: 40px;

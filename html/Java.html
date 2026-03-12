@@ -169,7 +169,7 @@
           layer.bindPopup("<b>" + feature.properties.naam + "</b>", { width: "600px" });
         }
 
-        fetch("../html/Temple.json")
+        fetch("../js/Temple.json")
           .then((res) => res.json())
           .then((geojson) => {
             L.geoJson(geojson, {
@@ -180,8 +180,24 @@
             }).addTo(map);
           })
           .catch((err) => console.error("Fout bij laden GeoJSON:", err));
-      </script>
-      <script>
+
+
+          fetch("../js/Indonesia_provinces.geojson")
+          .then((res) => res.json())
+          .then((geojson) => {
+            L.geoJson(geojson, {
+              style: function (feature) {
+                return {
+                  color: "black",
+                  weight: 1,
+                  fillColor: "#BFBFBF",
+                  fillOpacity: 0.5,
+                };
+              },
+            }).addTo(map);
+          })
+
+
         const sections = document.querySelectorAll(".section");
 
         window.addEventListener("scroll", function () {
