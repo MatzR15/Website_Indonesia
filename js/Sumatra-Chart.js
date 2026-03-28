@@ -1,6 +1,3 @@
-// sumatra-chart.js
-// Grafiek: Etnische bevolkingsgroepen op Sumatra
-
 const ctx = document.getElementById("bevolkingChart").getContext("2d");
 
 const bevolkingChart = new Chart(ctx, {

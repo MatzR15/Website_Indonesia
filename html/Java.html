@@ -8,7 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/tekst.css" />
-    <link rel="stylesheet" href="../css/Eilanden.css" />
+    <link rel="stylesheet" href="../css/eilanden.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -44,7 +44,7 @@
         text-align: center;
         padding: 100px 20px;
         background: white;
-        background-image: url("../imgs/java.jpg");
+        background-image: url("../imgs/java-singleline.jpg");
         background-size: 40%;
         background-position: center;
         background-repeat: no-repeat;
@@ -136,8 +136,8 @@
 
       <nav>
         <a href="../index.html">Home</a>
-        <a href="../html/Bali.html">Bali</a>
-        <a href="../html/Sumatra.html">Sumatra</a>
+        <a href="../html/bali.html">Bali</a>
+        <a href="../html/sumatra.html">Sumatra</a>
       </nav>
     </header>
 
@@ -249,7 +249,7 @@
           });
         }
 
-        fetch("../js/Temple.json")
+        fetch("../js/temple.json")
           .then((res) => res.json())
           .then((geojson) => {
             L.geoJson(geojson, {
@@ -261,7 +261,7 @@
           })
           .catch((err) => console.error("Fout bij laden GeoJSON:", err));
 
-        fetch("../js/Indonesia_provinces.geojson")
+        fetch("../js/indonesia-provinces.geojson")
           .then((res) => res.json())
           .then((geojson) => {
             L.geoJson(geojson, {

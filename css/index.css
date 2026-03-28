@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Iosevka Charon", monospace;
-  background: url("../imgs/Indonesia.jpg") no-repeat center center fixed;
+  background: url("../imgs/indonesia-map.jpg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
