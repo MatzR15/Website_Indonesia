@@ -1,12 +1,17 @@
+/* Google Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* Basis typografie */
 h1 {
+  font-family: "Iosevka Charon", monospace;
   font-size: 60px;
+  font-weight: 700;
   letter-spacing: 5px;
   margin-bottom: 60px;
 }
 
 body {
-        margin: 0;
-        font-family: Helvetica, sans-serif;
-        background: #f5f5f5;
-      }
-      
+  margin: 0;
+  font-family: "Iosevka Charon", monospace;
+  background: #f5f5f5;
+}

@@ -9,7 +9,9 @@ header {
 }
 
 .logo {
+  font-family: "Iosevka Charon", monospace;
   font-size: 28px;
+  font-weight: 700;
   letter-spacing: 3px;
 }
 
@@ -17,6 +19,7 @@ nav a {
   margin-left: 30px;
   text-decoration: none;
   color: black;
+  font-family: "Iosevka Charon", monospace;
   font-size: 18px;
 }
 
@@ -41,11 +44,14 @@ nav a {
 }
 
 .section h2 {
+  font-family: "Iosevka Charon", monospace;
   font-size: 28px;
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
 .section p {
+  font-family: "Iosevka Charon", monospace;
   font-size: 18px;
   line-height: 1.6;
   color: #444;
@@ -93,6 +99,7 @@ nav a {
 }
 
 .chart-caption {
+  font-family: "Iosevka Charon", monospace;
   font-size: 14px !important;
   color: #888 !important;
   text-align: center;
@@ -115,6 +122,7 @@ footer {
 }
 
 .footer-content p {
+  font-family: "Iosevka Charon", monospace;
   font-size: 16px;
   color: #444;
   text-align: center;
@@ -136,6 +144,7 @@ footer {
 }
 
 .map-text {
+  font-family: "Iosevka Charon", monospace;
   margin-top: 10px;
   font-size: 16px;
   color: #444;

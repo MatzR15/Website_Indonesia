@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/tekst.css" />
     <link rel="stylesheet" href="../css/Eilanden.css" />
     <link
@@ -47,19 +53,21 @@
       }
 
       .hero h1 {
+        font-family: "Iosevka Charon", monospace;
         font-size: 70px;
+        font-weight: 700;
         letter-spacing: 5px;
         margin-bottom: 10px;
       }
 
       .hero p {
+        font-family: "Iosevka Charon", monospace;
         font-size: 22px;
         color: black;
       }
 
       /* RESPONSIVE */
       @media (max-width: 600px) {
-        /* Header */
         header {
           flex-direction: column;
           align-items: flex-start;
@@ -78,7 +86,6 @@
           font-size: 15px;
         }
 
-        /* Hero */
         .hero {
           padding: 60px 20px;
           background-size: 90%;
@@ -93,7 +100,6 @@
           font-size: 16px;
         }
 
-        /* Content */
         .container {
           margin: 40px auto;
           padding: 0 16px;
@@ -112,12 +118,10 @@
           font-size: 15px;
         }
 
-        /* Kaart */
         #map {
           height: 260px;
         }
 
-        /* Footer */
         footer {
           padding: 24px 20px;
           margin-top: 40px;
@@ -177,7 +181,8 @@
           Java ligt in het hart van Indonesië en is omringd door de Javazee, de
           Indische Oceaan en de Bali-zee. Het eiland heeft een strategische
           ligging en is een belangrijk knooppunt voor handel en transport in de
-          regio. In de kaart hieronder zijn locaties van een aantal grote tempels op Java weergegeven. 
+          regio. In de kaart hieronder zijn locaties van een aantal grote
+          tempels op Java weergegeven.
         </p>
         <div id="map"></div>
       </div>
