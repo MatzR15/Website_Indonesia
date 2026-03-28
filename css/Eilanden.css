@@ -85,6 +85,21 @@ nav a {
   margin: 0 auto;
 }
 
+/* GRAFIEK */
+.chart-container {
+  position: relative;
+  width: 100%;
+  margin: 25px 0 10px 0;
+}
+
+.chart-caption {
+  font-size: 14px !important;
+  color: #888 !important;
+  text-align: center;
+  margin-top: 8px !important;
+  font-style: italic;
+}
+
 /* FOOTER */
 footer {
   background: white;
@@ -96,7 +111,7 @@ footer {
 .footer-content {
   max-width: 900px;
   margin: 0 auto;
-text-align: center;
+  text-align: center;
 }
 
 .footer-content p {
@@ -105,7 +120,7 @@ text-align: center;
   text-align: center;
 }
 
-.cultuur-gif{
+.cultuur-gif {
   width: 50%;
   height: auto;
   display: block;

@@ -32,6 +32,82 @@
         font-size: 22px;
         color: black;
       }
+
+      /* RESPONSIVE */
+      @media (max-width: 600px) {
+        /* Header */
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px 24px;
+          gap: 12px;
+        }
+
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        nav a {
+          margin-left: 0;
+          font-size: 15px;
+        }
+
+        /* Hero */
+        .hero {
+          padding: 60px 20px;
+          background-size: 90%;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+          letter-spacing: 3px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        /* Content */
+        .container {
+          margin: 40px auto;
+          padding: 0 16px;
+        }
+
+        .section {
+          padding: 24px 20px;
+          margin-bottom: 20px;
+        }
+
+        .section h2 {
+          font-size: 22px;
+        }
+
+        .section p {
+          font-size: 15px;
+        }
+
+        /* Video */
+        .video-container {
+          margin-bottom: 16px;
+        }
+
+        /* Grafiek */
+        .chart-container {
+          margin: 16px 0 6px 0;
+        }
+
+        .chart-caption {
+          font-size: 13px !important;
+        }
+
+        /* Footer */
+        footer {
+          padding: 24px 20px;
+          margin-top: 40px;
+        }
+      }
     </style>
   </head>
 
@@ -55,34 +131,39 @@
       <div class="section">
         <h2>Natuur</h2>
         <p>
-          Sumatra is een van de grootste eilanden van Indonesië en staat bekend om zijn indrukwekkende natuur en diverse
-          landschappen. Het eiland herbergt weelderige regenwouden, actieve vulkanen, meren en een rijke fauna, waaronder de
-          Sumatraanse tijger en orang-oetans.
+          Sumatra is een van de grootste eilanden van Indonesië en staat bekend
+          om zijn indrukwekkende natuur en diverse landschappen. Het eiland
+          herbergt weelderige regenwouden, actieve vulkanen, meren en een rijke
+          fauna, waaronder de Sumatraanse tijger en orang-oetans.
         </p>
       </div>
 
       <div class="section">
         <h2>Bezienswaardigheden</h2>
         <p>
-          Bekende plekken op Sumatra zijn het Tobameer, de vulkaan Mount Leuser, de stad Medan en de tropische stranden van
-          Weh-eiland. Sumatra biedt avontuurlijke trektochten, wildlife-excursies en culturele ervaringen.
+          Bekende plekken op Sumatra zijn het Tobameer, de vulkaan Mount Leuser,
+          de stad Medan en de tropische stranden van Weh-eiland. Sumatra biedt
+          avontuurlijke trektochten, wildlife-excursies en culturele ervaringen.
         </p>
       </div>
 
       <div class="section">
         <h2>Cultuur</h2>
         <p>
-          De cultuur op Sumatra is veelzijdig, met sterke invloeden van zowel het islamitische geloof als lokale tradities.
-          Rituelen, traditionele huizen en ambachten spelen een belangrijke rol in het dagelijks leven van de bewoners.
+          De cultuur op Sumatra is veelzijdig, met sterke invloeden van zowel
+          het islamitische geloof als lokale tradities. Rituelen, traditionele
+          huizen en ambachten spelen een belangrijke rol in het dagelijks leven
+          van de bewoners.
         </p>
       </div>
 
       <div class="section">
         <h2>De wildernis van Sumatra</h2>
-        
         <p>
-          Bekijk deze video voor een virtuele tour door de prachtige natuur en cultuur van Sumatra, Indonesië. Ontdek de
-          adembenemende landschappen, diverse flora en fauna, en de rijke culturele tradities van dit indrukwekkende eiland.
+          Bekijk deze video voor een virtuele tour door de prachtige natuur en
+          cultuur van Sumatra, Indonesië. Ontdek de adembenemende landschappen,
+          diverse flora en fauna, en de rijke culturele tradities van dit
+          indrukwekkende eiland.
         </p>
         <div class="video-container">
           <iframe
@@ -91,7 +172,15 @@
             src="https://www.youtube.com/embed/EFEeFdZg2F4?si=Tfl_0JLa3-XmgcgO"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
@@ -101,33 +190,44 @@
       <div class="section">
         <h2>Bevolking</h2>
         <p>
-          Sumatra heeft een rijke en divers bevolking met verschillende culturele en etnische groepen. De bevolking is geconcentreerd in verschillende steden en dorpjes, waar elk zijn eigen tradities en gewoontes heeft.
+          Sumatra heeft een rijke en diverse bevolking met verschillende
+          culturele en etnische groepen. De bevolking is geconcentreerd in
+          verschillende steden en dorpjes, waar elk zijn eigen tradities en
+          gewoontes heeft.
         </p>
-        <canvas id="bevolkingChart" width="400" height="200"></canvas>
+        <div class="chart-container">
+          <canvas id="bevolkingChart"></canvas>
+        </div>
+        <p class="chart-caption">
+          Verdeling van de belangrijkste etnische groepen op Sumatra (% van
+          totale bevolking)
+        </p>
       </div>
     </div>
 
-      <script>
-        const sections = document.querySelectorAll(".section");
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/sumatra-chart.js"></script>
 
-        window.addEventListener("scroll", function () {
-          sections.forEach((section) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const screenHeight = window.innerHeight;
+    <script>
+      const sections = document.querySelectorAll(".section");
 
-            if (sectionTop < screenHeight - 100) {
-              section.classList.add("show");
-            }
-          });
+      window.addEventListener("scroll", function () {
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const screenHeight = window.innerHeight;
+
+          if (sectionTop < screenHeight - 100) {
+            section.classList.add("show");
+          }
         });
-      </script>
-    </div>
-  <footer>
-    <div class="footer-content">
-      <p>© 2026 Indonesië Reisinformatie</p>
-      <p> -- Matz Robijn --</p>
-    </div>
-  </footer>
-    
+      });
+    </script>
+
+    <footer>
+      <div class="footer-content">
+        <p>© 2026 Indonesië Reisinformatie</p>
+        <p>-- Matz Robijn --</p>
+      </div>
+    </footer>
   </body>
 </html>
