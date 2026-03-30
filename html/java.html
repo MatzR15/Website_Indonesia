@@ -39,6 +39,21 @@
         color: green;
       }
 
+      .leaflet-control-basemap button {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 13px;
+        font-family: "Iosevka Charon", monospace;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      }
+
+      .leaflet-control-basemap button:hover {
+        background: #f4f4f4;
+      }
+
       /* HERO */
       .hero {
         text-align: center;
@@ -188,8 +203,18 @@
       </div>
 
       <script>
-        const osm = L.tileLayer(
+        const lightLayer = L.tileLayer(
           "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: "abcd",
+            maxZoom: 19,
+          },
+        );
+
+        const darkLayer = L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
           {
             attribution:
               '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
@@ -201,47 +226,69 @@
         const map = L.map("map", {
           center: [-7.23464944361684, 109.80658254761912],
           zoom: 7,
-          layers: [osm],
+          layers: [lightLayer],
         });
 
+        let isDark = false;
+
+        const BasemapToggle = L.Control.extend({
+          options: { position: "topright" },
+          onAdd: function () {
+            const btn = L.DomUtil.create("button");
+            btn.innerHTML = "🌙 Donker";
+            btn.style.cssText =
+              "background:white;border:1px solid rgba(0,0,0,0.3);border-radius:4px;padding:6px 10px;cursor:pointer;font-size:13px;font-family:'Iosevka Charon',monospace;box-shadow:0 1px 5px rgba(0,0,0,0.25);";
+
+            L.DomEvent.on(btn, "click", function (e) {
+              L.DomEvent.stopPropagation(e);
+              isDark = !isDark;
+              if (isDark) {
+                map.removeLayer(lightLayer);
+                map.addLayer(darkLayer);
+                btn.innerHTML = "☀️ Licht";
+                btn.style.background = "#1a1a2e";
+                btn.style.color = "white";
+                btn.style.borderColor = "rgba(255,255,255,0.3)";
+              } else {
+                map.removeLayer(darkLayer);
+                map.addLayer(lightLayer);
+                btn.innerHTML = "🌙 Donker";
+                btn.style.background = "white";
+                btn.style.color = "black";
+                btn.style.borderColor = "rgba(0,0,0,0.3)";
+              }
+              if (templeLayer) {
+                map.removeLayer(templeLayer);
+                templeLayer.eachLayer(function (layer) {
+                  layer.setIcon(isDark ? fontAwesomeIconDark : fontAwesomeIcon);
+                });
+                templeLayer.addTo(map);
+              }
+            });
+
+            return btn;
+          },
+        });
+
+        new BasemapToggle().addTo(map);
+
         const fontAwesomeIcon = L.divIcon({
-          html: '<i class="fa-solid fa-location-dot fa-2x"></i>',
+          html: '<i class="fa-solid fa-location-dot fa-2x" style="color: green;"></i>',
           iconSize: [30, 30],
           iconAnchor: [15, 30],
           popupAnchor: [0, -30],
           className: "fontawesome_icon",
         });
 
-        let geojson_marker = {
-          crs: {
-            properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" },
-            type: "name",
-          },
-          features: [
-            {
-              geometry: {
-                coordinates: [-7.23464944361684, 109.80658254761912],
-                type: "Point",
-              },
-              properties: {
-                naam: "Java",
-                adres: "Indonesië",
-              },
-              type: "Feature",
-            },
-          ],
-          name: "Java",
-          type: "FeatureCollection",
-        };
+        const fontAwesomeIconDark = L.divIcon({
+          html: '<i class="fa-solid fa-location-dot fa-2x" style="color: #FFD700;"></i>',
+          iconSize: [30, 30],
+          iconAnchor: [15, 30],
+          popupAnchor: [0, -30],
+          className: "fontawesome_icon",
+        });
 
-        let jsonlayer = L.geoJson(geojson_marker, {
-          onEachFeature: onEachFeature,
-          pointToLayer: function (ftr, latlng) {
-            return L.marker([-7.23464944361684, 109.80658254761912], {
-              icon: fontAwesomeIcon,
-            });
-          },
-        }).addTo(map);
+        let templeLayer = null;
 
         function onEachFeature(feature, layer) {
           layer.bindPopup("<b>" + feature.properties.naam + "</b>", {
@@ -252,7 +299,7 @@
         fetch("../js/temple.json")
           .then((res) => res.json())
           .then((geojson) => {
-            L.geoJson(geojson, {
+            templeLayer = L.geoJson(geojson, {
               onEachFeature: onEachFeature,
               pointToLayer: function (feature, latlng) {
                 return L.marker(latlng, { icon: fontAwesomeIcon });
@@ -265,7 +312,7 @@
           .then((res) => res.json())
           .then((geojson) => {
             L.geoJson(geojson, {
-              style: function (feature) {
+              style: function () {
                 return {
                   color: "black",
                   weight: 1,
@@ -282,7 +329,6 @@
           sections.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top;
             const screenHeight = window.innerHeight;
-
             if (sectionTop < screenHeight - 100) {
               section.classList.add("show");
             }
